@@ -45,7 +45,7 @@ export function ThemeToggle({ className = '' }) {
       <button
         type="button"
         aria-label="Toggle theme"
-        className={`flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-400 ${className}`}
+        className={`flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-slate-500 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-400 ${className}`}
       >
         <Moon className="h-4 w-4" />
       </button>
@@ -58,7 +58,7 @@ export function ThemeToggle({ className = '' }) {
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-      className={`flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:border-zinc-700 hover:text-zinc-200 transition-colors cursor-pointer ${className}`}
+      className={`flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-slate-500 hover:border-slate-300 hover:text-slate-900 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-400 dark:hover:border-zinc-700 dark:hover:text-zinc-200 transition-colors cursor-pointer ${className}`}
     >
       {theme === 'dark' ? (
         <Sun className="h-4 w-4 text-amber-400 hover:text-amber-300 transition-colors" />

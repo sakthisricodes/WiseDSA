@@ -9,7 +9,7 @@ export function Shell({ children, user }) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-zinc-950 text-zinc-100 antialiased selection:bg-blue-500/20">
+    <div className="flex min-h-screen bg-slate-50 text-slate-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased selection:bg-blue-500/20">
       {/* Desktop Sidebar */}
       <div className="hidden md:block shrink-0">
         <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
@@ -22,7 +22,7 @@ export function Shell({ children, user }) {
             className="fixed inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setIsMobileOpen(false)}
           />
-          <div className="relative flex w-72 flex-col bg-zinc-950">
+          <div className="relative flex w-72 flex-col bg-white dark:bg-zinc-950">
             <Sidebar isCollapsed={false} setIsCollapsed={() => setIsMobileOpen(false)} />
           </div>
         </div>

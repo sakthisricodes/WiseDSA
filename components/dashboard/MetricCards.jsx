@@ -11,7 +11,7 @@ export function MetricCards({ overview }) {
       value: total,
       sublabel: 'Curriculum database',
       icon: Target,
-      color: 'text-blue-400',
+      color: 'text-blue-600 dark:text-blue-400',
       bgColor: 'bg-blue-500/10',
       borderColor: 'border-blue-500/20'
     },
@@ -20,7 +20,7 @@ export function MetricCards({ overview }) {
       value: solved,
       sublabel: `${completionPercentage}% completed`,
       icon: CheckCircle2,
-      color: 'text-emerald-400',
+      color: 'text-emerald-600 dark:text-emerald-400',
       bgColor: 'bg-emerald-500/10',
       borderColor: 'border-emerald-500/20'
     },
@@ -29,7 +29,7 @@ export function MetricCards({ overview }) {
       value: inProgress,
       sublabel: 'Currently working on',
       icon: Clock,
-      color: 'text-amber-400',
+      color: 'text-amber-600 dark:text-amber-400',
       bgColor: 'bg-amber-500/10',
       borderColor: 'border-amber-500/20'
     },
@@ -38,7 +38,7 @@ export function MetricCards({ overview }) {
       value: unsolved,
       sublabel: 'Ready to tackle',
       icon: CircleDot,
-      color: 'text-red-400',
+      color: 'text-red-600 dark:text-red-400',
       bgColor: 'bg-red-500/10',
       borderColor: 'border-red-500/20'
     },
@@ -47,7 +47,7 @@ export function MetricCards({ overview }) {
       value: needsRevision,
       sublabel: 'Scheduled for recall',
       icon: RotateCcw,
-      color: 'text-purple-400',
+      color: 'text-purple-600 dark:text-purple-400',
       bgColor: 'bg-purple-500/10',
       borderColor: 'border-purple-500/20'
     }

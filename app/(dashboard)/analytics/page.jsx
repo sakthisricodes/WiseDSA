@@ -14,8 +14,8 @@ export default async function AnalyticsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-white">DSA Analytics & Mastery</h1>
-        <p className="text-xs text-zinc-400 mt-0.5">
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">DSA Analytics & Mastery</h1>
+        <p className="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
           Real metrics derived from your personal problem solves, streaks, and curriculum coverage.
         </p>
       </div>

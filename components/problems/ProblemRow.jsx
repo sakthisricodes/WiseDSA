@@ -37,9 +37,9 @@ export function ProblemRow({ problem }) {
   };
 
   return (
-    <tr className="group border-b border-zinc-850 hover:bg-zinc-900/60 transition-colors">
+    <tr className="group border-b border-slate-100 dark:border-zinc-850 hover:bg-slate-50/80 dark:hover:bg-zinc-900/60 transition-colors">
       {/* Index & Checkbox status */}
-      <td className="py-3 px-3 w-10 text-center font-mono text-xs text-zinc-400">
+      <td className="py-3 px-3 w-10 text-center font-mono text-xs text-slate-400 dark:text-zinc-400">
         #{problem.orderIndex}
       </td>
 
@@ -49,7 +49,7 @@ export function ProblemRow({ problem }) {
           <div className="flex flex-wrap items-center gap-1.5">
             <Link
               href={`/problems/${problem.slug}`}
-              className="text-sm font-semibold text-zinc-100 hover:text-blue-400 transition-colors"
+              className="text-sm font-semibold text-slate-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               {problem.title}
             </Link>
@@ -71,7 +71,7 @@ export function ProblemRow({ problem }) {
                 href={problem.url}
                 target="_blank"
                 rel="noreferrer"
-                className="text-zinc-500 hover:text-zinc-300 p-0.5"
+                className="text-slate-400 hover:text-slate-600 dark:text-zinc-500 dark:hover:text-zinc-300 p-0.5"
                 title="Open external problem link"
               >
                 <ExternalLink className="h-3 w-3" />
@@ -81,17 +81,17 @@ export function ProblemRow({ problem }) {
 
           {/* Remarks & Techniques */}
           {(problem.remarks || (problem.techniques && problem.techniques.length > 0)) && (
-            <div className="flex flex-wrap items-center gap-1 text-[11px] text-zinc-400">
+            <div className="flex flex-wrap items-center gap-1 text-[11px] text-slate-500 dark:text-zinc-400">
               {problem.remarks && (
-                <span className="text-zinc-400 italic flex items-center gap-1 mr-1">
-                  <Info className="h-3 w-3 text-zinc-400 inline" /> {problem.remarks}
+                <span className="text-slate-500 dark:text-zinc-400 italic flex items-center gap-1 mr-1">
+                  <Info className="h-3 w-3 text-slate-400 dark:text-zinc-400 inline" /> {problem.remarks}
                 </span>
               )}
               {problem.techniques &&
                 problem.techniques.map((tech) => (
                   <span
                     key={tech}
-                    className="inline-flex items-center px-1.5 py-0.2 rounded bg-zinc-800 text-[10px] text-zinc-300 font-mono"
+                    className="inline-flex items-center px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 dark:bg-zinc-800 dark:text-zinc-300 text-[10px] font-mono border border-slate-200 dark:border-zinc-700/50"
                   >
                     {tech}
                   </span>
@@ -105,7 +105,7 @@ export function ProblemRow({ problem }) {
       <td className="py-3 px-3 whitespace-nowrap">
         <Link
           href={`/problems?topic=${encodeURIComponent(problem.topic)}`}
-          className="text-xs text-zinc-400 hover:text-zinc-200 font-mono"
+          className="text-xs text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-200 font-mono"
         >
           {problem.topic}
         </Link>
@@ -120,19 +120,19 @@ export function ProblemRow({ problem }) {
                 <Link
                   key={comp}
                   href={`/problems?company=${encodeURIComponent(comp)}`}
-                  className="rounded border border-zinc-800 bg-zinc-950/60 px-1.5 py-0.5 text-[10px] text-zinc-400 hover:border-zinc-700 hover:text-zinc-200 transition-colors"
+                  className="rounded border border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-950/60 px-1.5 py-0.5 text-[10px] text-slate-600 dark:text-zinc-400 hover:border-slate-300 dark:hover:border-zinc-700 hover:text-slate-900 dark:hover:text-zinc-200 transition-colors"
                 >
                   {comp}
                 </Link>
               ))}
               {problem.companies.length > 3 && (
-                <span className="text-[10px] text-zinc-400 px-1 self-center" title={problem.companies.slice(3).join(', ')}>
+                <span className="text-[10px] text-slate-400 dark:text-zinc-400 px-1 self-center" title={problem.companies.slice(3).join(', ')}>
                   +{problem.companies.length - 3}
                 </span>
               )}
             </>
           ) : (
-            <span className="text-zinc-400 text-xs">—</span>
+            <span className="text-slate-400 dark:text-zinc-400 text-xs">—</span>
           )}
         </div>
       </td>
@@ -164,8 +164,8 @@ export function ProblemRow({ problem }) {
           disabled={isPending}
           className={`p-1.5 rounded-lg border transition-all cursor-pointer ${
             needsRevision
-              ? 'bg-purple-500/20 text-purple-300 border-purple-500/50 shadow-sm shadow-purple-950'
-              : 'bg-transparent text-zinc-400 border-transparent hover:border-zinc-800 hover:text-zinc-300'
+              ? 'bg-purple-100 text-purple-700 border-purple-300 dark:bg-purple-500/20 dark:text-purple-300 dark:border-purple-500/50 shadow-xs'
+              : 'bg-transparent text-slate-400 dark:text-zinc-400 border-transparent hover:border-slate-200 dark:hover:border-zinc-800 hover:text-slate-600 dark:hover:text-zinc-300'
           }`}
           title={needsRevision ? 'Marked for revision' : 'Mark for revision'}
         >
@@ -177,7 +177,7 @@ export function ProblemRow({ problem }) {
       <td className="py-3 px-3 text-right">
         <Link
           href={`/problems/${problem.slug}`}
-          className="text-xs text-zinc-500 hover:text-blue-400 p-1 transition-colors inline-flex items-center"
+          className="text-xs text-slate-400 hover:text-blue-600 dark:text-zinc-500 dark:hover:text-blue-400 p-1 transition-colors inline-flex items-center"
         >
           <ChevronRight className="h-4 w-4" />
         </Link>

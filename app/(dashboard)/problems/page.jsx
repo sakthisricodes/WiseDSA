@@ -28,8 +28,8 @@ export default async function ProblemsPage({ searchParams }) {
     <div className="space-y-5">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-white">Problem Explorer</h1>
-          <p className="text-xs text-zinc-400 mt-0.5">
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Problem Explorer</h1>
+          <p className="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
             Search, filter, and track all 375 problems from the Apna College DSA Course Sheet by topic, company tag, and algorithmic technique.
           </p>
         </div>

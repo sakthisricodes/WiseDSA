@@ -11,13 +11,20 @@ export function Button({
 }) {
   const variants = {
     default: 'bg-blue-600 text-white hover:bg-blue-500 shadow-sm shadow-blue-900/20 active:scale-[0.98]',
-    secondary: 'bg-zinc-800 text-zinc-100 hover:bg-zinc-700 border border-zinc-700 active:scale-[0.98]',
-    outline: 'border border-zinc-700/80 bg-transparent text-zinc-200 hover:bg-zinc-800/80 hover:text-white active:scale-[0.98]',
-    ghost: 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/50',
-    destructive: 'bg-red-500/10 text-red-400 border border-red-500/30 hover:bg-red-500/20',
-    emerald: 'bg-emerald-600/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-600/30 active:scale-[0.98]',
-    amber: 'bg-amber-600/20 text-amber-300 border border-amber-500/40 hover:bg-amber-600/30 active:scale-[0.98]',
-    purple: 'bg-purple-600/20 text-purple-300 border border-purple-500/40 hover:bg-purple-600/30 active:scale-[0.98]'
+    secondary:
+      'bg-slate-100 text-slate-900 hover:bg-slate-200 border border-slate-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 dark:border-zinc-700 active:scale-[0.98]',
+    outline:
+      'border border-slate-300 bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:border-zinc-700/80 dark:text-zinc-200 dark:bg-transparent dark:hover:bg-zinc-800/80 dark:hover:text-white active:scale-[0.98]',
+    ghost:
+      'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-zinc-400 dark:hover:text-zinc-100 dark:hover:bg-zinc-800/50',
+    destructive:
+      'bg-red-50 text-red-700 border border-red-200 hover:bg-red-100 dark:bg-red-500/10 dark:text-red-400 dark:border-red-500/30 dark:hover:bg-red-500/20',
+    emerald:
+      'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 dark:bg-emerald-600/20 dark:text-emerald-300 dark:border-emerald-500/40 dark:hover:bg-emerald-600/30 active:scale-[0.98]',
+    amber:
+      'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100 dark:bg-amber-600/20 dark:text-amber-300 dark:border-amber-500/40 dark:hover:bg-amber-600/30 active:scale-[0.98]',
+    purple:
+      'bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 dark:bg-purple-600/20 dark:text-purple-300 dark:border-purple-500/40 dark:hover:bg-purple-600/30 active:scale-[0.98]'
   };
 
   const sizes = {
@@ -45,13 +52,20 @@ export function Button({
 
 export function Badge({ className, variant = 'default', children, ...props }) {
   const variants = {
-    default: 'bg-zinc-800 text-zinc-300 border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700',
-    primary: 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/30 font-medium',
-    emerald: 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/30 font-medium',
-    amber: 'bg-amber-500/10 text-amber-800 dark:text-amber-400 border-amber-500/30 font-medium',
-    purple: 'bg-purple-500/10 text-purple-700 dark:text-purple-400 border-purple-500/30 font-medium',
-    red: 'bg-red-500/10 text-red-700 dark:text-red-400 border-red-500/30 font-medium',
-    outline: 'border-zinc-700 text-zinc-400 font-medium'
+    default:
+      'bg-slate-100 text-slate-700 border-slate-200 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700',
+    primary:
+      'bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/30 font-medium',
+    emerald:
+      'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/30 font-medium',
+    amber:
+      'bg-amber-500/10 text-amber-800 dark:text-amber-400 border-amber-500/30 font-medium',
+    purple:
+      'bg-purple-500/10 text-purple-700 dark:text-purple-400 border-purple-500/30 font-medium',
+    red:
+      'bg-red-500/10 text-red-700 dark:text-red-400 border-red-500/30 font-medium',
+    outline:
+      'border-slate-300 text-slate-600 dark:border-zinc-700 dark:text-zinc-400 font-medium'
   };
 
   return (

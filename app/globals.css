@@ -320,6 +320,7 @@ html.light .text-zinc-500 { color: #64748b !important; }
 html.light .text-zinc-600 { color: #94a3b8 !important; }
 html.light .text-white    { color: #0f172a !important; }
 /* Exception: icons/content inside colored containers (e.g. blue logo box) must stay white */
+html.light .bg-blue-600,
 html.light .bg-blue-600 .text-white,
 html.light .bg-blue-600 svg { color: white !important; }
 
