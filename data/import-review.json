@@ -1,0 +1,39 @@
+{
+  "totalExtracted": 358,
+  "source": "Apna College DSA Sheet (375-problem curriculum by Shradha Ma'am)",
+  "extractedAt": "2026-09-19T12:15:00.000Z",
+  "duplicatesAndAudits": [
+    {
+      "orderIndex": 91,
+      "title": "Soduko",
+      "topic": "Backtracking",
+      "matchedWithIndex": 87,
+      "matchedTitle": "Solve the Sudoku",
+      "decision": "Retained as distinct problem entry with original spelling and company tags ('Amazon + Adobe + Accolite + Traveloka') to preserve auditability."
+    },
+    {
+      "orderIndex": 151,
+      "title": "The celebrity problem (Variant)",
+      "topic": "Stacks & Queues",
+      "matchedWithIndex": 144,
+      "matchedTitle": "The Celebrity Problem",
+      "decision": "Preserved both occurrences from Page 2 with distinct orderIndex to avoid silent data loss."
+    },
+    {
+      "orderIndex": 248,
+      "title": "Merge K Sorted lists",
+      "topic": "Heaps & Hashing",
+      "matchedWithIndex": 122,
+      "matchedTitle": "Merge K Sorted Lists (Linked List)",
+      "decision": "Preserved in both Linked List and Heaps & Hashing sections representing different algorithmic paradigms."
+    },
+    {
+      "orderIndex": 335,
+      "title": "Maximum sum increasing subsequence (Variant)",
+      "topic": "Dynamic Programming",
+      "matchedWithIndex": 333,
+      "matchedTitle": "Maximum sum increasing subsequence",
+      "decision": "Retained duplicate DP row as present in the original sheet without silent deletion."
+    }
+  ]
+}

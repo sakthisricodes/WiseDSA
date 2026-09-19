@@ -1,0 +1,468 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   DESIGN TOKENS — Dark Mode (default)
+   ============================================================ */
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 6.2%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 6.2%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    --radius: 0.5rem;
+
+    --select-bg: #090d16;
+    --select-text: #f1f5f9;
+    --select-border: #27272a;
+  }
+
+  /* ============================================================
+     LIGHT MODE DESIGN TOKENS
+     ============================================================ */
+  html.light {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 10%;
+
+    --primary: 217.2 91.2% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 222.2 84% 15%;
+
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 20% 40%;
+
+    --accent: 210 40% 94%;
+    --accent-foreground: 222.2 84% 15%;
+
+    --destructive: 0 84% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 82%;
+    --ring: 217.2 91.2% 49%;
+
+    --select-bg: #ffffff;
+    --select-text: #0f172a;
+    --select-border: #cbd5e1;
+  }
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    selection-color: rgb(96 165 250 / 0.2);
+  }
+}
+
+/* ============================================================
+   NATIVE SELECT & OPTION CONTRAST FIX
+   ============================================================ */
+select {
+  color-scheme: dark;
+  background-color: var(--select-bg);
+  color: var(--select-text);
+  border-color: var(--select-border);
+}
+
+select option {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+  font-weight: 500;
+  padding: 8px 12px;
+}
+
+html.light select {
+  color-scheme: light;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  font-weight: 500;
+  padding: 8px 12px;
+}
+
+/* ============================================================
+   SEMANTIC STATUS COLOR CLASSES
+   ============================================================ */
+/* Dark Mode */
+.status-solved {
+  background-color: rgba(16, 185, 129, 0.16) !important;
+  color: rgb(52, 211, 153) !important;
+  border-color: rgba(16, 185, 129, 0.45) !important;
+  font-weight: 600;
+}
+
+.status-inprogress {
+  background-color: rgba(245, 158, 11, 0.16) !important;
+  color: rgb(251, 191, 36) !important;
+  border-color: rgba(245, 158, 11, 0.45) !important;
+  font-weight: 600;
+}
+
+.status-unsolved {
+  background-color: rgba(239, 68, 68, 0.16) !important;
+  color: rgb(248, 113, 113) !important;
+  border-color: rgba(239, 68, 68, 0.45) !important;
+  font-weight: 600;
+}
+
+/* Light Mode */
+html.light .status-solved {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #a7f3d0 !important;
+  font-weight: 600;
+}
+
+html.light .status-inprogress {
+  background-color: #fffbeb !important;
+  color: #b45309 !important;
+  border-color: #fde68a !important;
+  font-weight: 600;
+}
+
+html.light .status-unsolved {
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+  border-color: #fecaca !important;
+  font-weight: 600;
+}
+
+/* ============================================================
+   LIGHT MODE DASHBOARD THEME OVERRIDES
+   ============================================================ */
+html.light {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.light body,
+html.light .flex.min-h-screen {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* ---- Sidebar ---- */
+html.light aside {
+  background-color: #ffffff !important;
+  border-right-color: #e2e8f0 !important;
+}
+
+html.light aside .border-b {
+  border-bottom-color: #e2e8f0 !important;
+}
+
+html.light aside .border-t {
+  border-top-color: #e2e8f0 !important;
+}
+
+html.light aside a,
+html.light aside span {
+  color: #0f172a;
+}
+
+html.light aside nav a {
+  color: #475569 !important;
+}
+
+html.light aside nav a:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html.light aside nav a.bg-blue-600\/15 {
+  background-color: #eff6ff !important;
+  color: #2563eb !important;
+  border-color: #bfdbfe !important;
+  box-shadow: none !important;
+}
+
+html.light aside .border-zinc-800,
+html.light aside .border-zinc-800\/80 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light aside .bg-zinc-900\/40,
+html.light aside .bg-zinc-950\/90 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light aside .text-zinc-400 {
+  color: #64748b !important;
+}
+
+html.light aside .text-zinc-200 {
+  color: #1e293b !important;
+}
+
+/* ---- Header ---- */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+html.light header .border-zinc-800,
+html.light header .border-zinc-800\/80 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light header .bg-zinc-900\/60,
+html.light header .bg-zinc-950\/80 {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light header .text-zinc-400 {
+  color: #64748b !important;
+}
+
+html.light header .text-zinc-500 {
+  color: #94a3b8 !important;
+}
+
+html.light header .bg-zinc-900\/80 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light header .text-zinc-300 {
+  color: #1e293b !important;
+}
+
+/* ---- Main Content ---- */
+html.light main {
+  background-color: transparent;
+}
+
+/* Card & Panel Overrides */
+html.light .bg-zinc-950,
+html.light .bg-zinc-950\/90,
+html.light .bg-zinc-950\/80,
+html.light .bg-zinc-950\/70,
+html.light .bg-zinc-950\/60,
+html.light .bg-zinc-950\/40 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-zinc-900,
+html.light .bg-zinc-900\/90,
+html.light .bg-zinc-900\/80,
+html.light .bg-zinc-900\/60,
+html.light .bg-zinc-900\/50,
+html.light .bg-zinc-900\/40,
+html.light .bg-zinc-900\/30 {
+  background-color: #ffffff !important;
+}
+
+html.light .rounded-xl {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+}
+
+html.light .bg-zinc-800 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .bg-zinc-800\/50,
+html.light .bg-zinc-800\/80 {
+  background-color: #f1f5f9 !important;
+}
+
+/* Text Overrides */
+html.light .text-zinc-100 { color: #0f172a !important; }
+html.light .text-zinc-200 { color: #1e293b !important; }
+html.light .text-zinc-300 { color: #334155 !important; }
+html.light .text-zinc-400 { color: #64748b !important; }
+html.light .text-zinc-500 { color: #64748b !important; }
+html.light .text-zinc-600 { color: #94a3b8 !important; }
+html.light .text-white    { color: #0f172a !important; }
+/* Exception: icons/content inside colored containers (e.g. blue logo box) must stay white */
+html.light .bg-blue-600 .text-white,
+html.light .bg-blue-600 svg { color: white !important; }
+
+/* Border Overrides */
+html.light .border-zinc-800,
+html.light .border-zinc-800\/90,
+html.light .border-zinc-800\/80,
+html.light .border-zinc-800\/60,
+html.light .border-zinc-850,
+html.light .border-zinc-700,
+html.light .border-zinc-700\/80,
+html.light .divide-zinc-850 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Hover States */
+html.light .hover\:bg-zinc-900:hover,
+html.light .hover\:bg-zinc-850:hover,
+html.light .hover\:bg-zinc-900\/60:hover {
+  background-color: #f8fafc !important;
+}
+
+html.light .hover\:bg-zinc-800\/80:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* ---- Problems Table ---- */
+html.light table thead {
+  background-color: #f8fafc !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+html.light table thead th {
+  color: #475569 !important;
+  font-weight: 600;
+}
+
+html.light tr.group {
+  background-color: #ffffff !important;
+}
+
+html.light tr.group:hover {
+  background-color: #f8fafc !important;
+}
+
+html.light tr.border-b {
+  border-bottom-color: #f1f5f9 !important;
+}
+
+/* Badges in Light Mode */
+html.light .badge-default,
+html.light span.bg-zinc-800 {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Company link pills */
+html.light a.border-zinc-800,
+html.light .border-zinc-800.bg-zinc-950\/60 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+html.light a.border-zinc-800:hover {
+  border-color: #93c5fd !important;
+  color: #2563eb !important;
+}
+
+/* Inputs & Textareas */
+html.light input:not([type="checkbox"]) {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light input::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.light textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Progress Bars */
+html.light .bg-zinc-800,
+html.light .bg-zinc-800\/80 {
+  background-color: #e2e8f0 !important;
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.light .glass-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+/* Code Blocks */
+pre, code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
